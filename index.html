@@ -1,0 +1,39 @@
+<!doctype html>
+<html lang="en" ng-app="loginApp">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Login Authentication System</title>
+<link rel="stylesheet" href="styles.css" />
+<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.8.2/angular.min.js"></script>
+<script src="app.js"></script>
+</head>
+<body ng-controller="LoginController as loginCtrl">
+<main class="container">
+<header>
+<h1>Login</h1>
+</header>
+<section class="login-form">
+<form name="loginForm" ng-submit="loginCtrl.login()" novalidate>
+<div>
+<label>Email:</label>
+<input type="email" ng-model="loginCtrl.user.email" required />
+</div>
+<div>
+<label>Password:</label>
+<input type="password" ng-model="loginCtrl.user.password" required />
+</div>
+<button type="submit" ng-disabled="loginForm.$invalid">Login</button>
+<div class="error" ng-if="loginCtrl.errorMessage">
+{{ loginCtrl.errorMessage }}
+</div>
+</form>
+</section>
+<footer>
+<small>Login Authentication System • Frontend: AngularJS</small>
+</footer>
+</main>
+<script src="script.js"></script>
+</body>
+</html>
+
